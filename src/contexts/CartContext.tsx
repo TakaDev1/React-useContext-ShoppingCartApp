@@ -20,7 +20,7 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const addItem = (item: string) => {
     const newProduct: ProductType = {
       id: uuidv4(),
-      item,
+      item: item,
     };
 
     setCart((prev) => [...prev, newProduct]);
@@ -37,7 +37,7 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
 };
 
 const useCart = () => {
-  const context = useContext<CartContextType | undefined>(undefined);
+  const context = useContext(CartContext);
 
   if (!context) {
     throw new Error("CartContextが未定義です");
