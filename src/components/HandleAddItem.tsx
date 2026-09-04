@@ -5,7 +5,7 @@ const HandleItem = () => {
   const [item, setItem] = useState<string>("");
   const { addItem } = useCart();
   const handleSubmit = (item: string) => {
-    if (!item.trim) return;
+    if (!item.trim()) return;
 
     addItem(item);
     setItem("");
@@ -18,7 +18,7 @@ const HandleItem = () => {
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => setItem(event.target.value)}
         placeholder="アイテムを入力"
       />
-      <button onChange={() => handleSubmit(item)}>追加</button>
+      <button onClick={() => handleSubmit(item)}>追加</button>
     </div>
   );
 };
