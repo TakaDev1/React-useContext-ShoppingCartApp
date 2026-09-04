@@ -30,4 +30,14 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default CartContext;
+const useCart = () => {
+  const context = createContext<CartContextType | undefined>(undefined);
+
+  if (!context) {
+    throw new Error("CartContextが未定義です");
+  }
+
+  return context;
+};
+
+export { CartProvider, useCart };
