@@ -7,13 +7,15 @@ import { CartProvider } from "./contexts/CartContext";
 function App() {
   return (
     <>
-      <h1>React-useContext-ShoppingCartApp</h1>
-      <CartProvider>
-        <div>
-          <DisplayCart />
-          <HandleAddItem />
-        </div>
-      </CartProvider>
+      <div className="min-h-screen flex flex-col bg-gray-800 justify-center">
+        <h1>React-useContext-ShoppingCartApp</h1>
+        <CartProvider>
+          <div>
+            <DisplayCart />
+            <HandleAddItem />
+          </div>
+        </CartProvider>
+      </div>
     </>
   );
 }
